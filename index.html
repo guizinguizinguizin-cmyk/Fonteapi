@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #1e1e1e;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login {
+            background: #2c2c2c;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        input {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+        }
+
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="login">
+    <h2>Login</h2>
+
+    <input type="text" id="usuario" placeholder="Usuário">
+    <input type="password" id="senha" placeholder="Senha">
+
+    <button onclick="login()">Entrar</button>
+
+    <p id="mensagem"></p>
+</div>
+
+<script>
+    function login() {
+        let usuario = document.getElementById("usuario").value;
+        let senha = document.getElementById("senha").value;
+
+        if (usuario === "admin" && senha === "123") {
+            window.location.href = "home.html";
+        } else {
+            document.getElementById("mensagem").innerText = "Login inválido";
+        }
+    }
+</script>
+
+</body>
+</html>
